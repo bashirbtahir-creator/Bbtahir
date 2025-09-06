@@ -1,0 +1,130 @@
+:root {
+  --bg: linear-gradient(135deg, #1f1c2c, #928DAB);
+  --panel: rgba(255, 255, 255, 0.15);
+  --text: #fff;
+  --muted: #d1d5db;
+  --primary: #00f5d4;
+  --accent: #f72585;
+  --danger: #ff4d6d;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --radius: 20px;
+  --blur: 15px;
+}
+
+:root.dark {
+  --bg: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  --panel: rgba(20, 20, 35, 0.6);
+  --text: #e5e7eb;
+  --muted: #a1a1aa;
+  --primary: #60efff;
+  --accent: #ff6ec7;
+  --danger: #ff4d6d;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calc {
+  background: var(--panel);
+  backdrop-filter: blur(var(--blur));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  width: 350px;
+  animation: fadeIn 0.8s ease;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.brand span {
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.display {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: right;
+  margin-bottom: 1.5rem;
+  min-height: 80px;
+}
+
+.history {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.result {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+}
+
+.btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  padding: 1rem;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: inset 0 -3px 6px rgba(0,0,0,0.4);
+}
+
+.btn:hover {
+  background: var(--primary);
+  color: #111;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--primary);
+}
+
+.btn:active {
+  transform: scale(0.95);
+  box-shadow: inset 0 3px 8px rgba(0,0,0,0.6);
+}
+
+.operator {
+  background: var(--accent);
+  color: #fff;
+}
+
+.equals {
+  background: var(--primary);
+  color: #111;
+  font-weight: bold;
+}
+
+.clear {
+  background: var(--danger);
+  color: #fff;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
